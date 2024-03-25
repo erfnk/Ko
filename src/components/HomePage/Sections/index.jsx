@@ -62,28 +62,28 @@ export default function Sections() {
   return (
     <div className="main h-screen w-screen flex flex-col overflow-x-hidden">
       <section
-        className="min-h-[calc(100dvh)]"
+        className="min-h-[calc(100dvh)] w-screen relative"
         data-bgcolor="#b7c0be"
         data-textcolor="#17332D"
       >
         <Header />
       </section>
       <section
-        className="min-h-[calc(100dvh)] max-w-[100vw]"
+        className="min-h-[calc(100dvh)] w-screen relative"
         data-bgcolor="#F7F7F5"
         data-textcolor="#17332D"
       >
         <Services />
       </section>
       <section
-        className="min-h-[calc(100dvh)] max-w-[100vw]"
+        className="min-h-[calc(100dvh)] w-screen relative"
         data-bgcolor="#F7F7F5"
         data-textcolor="#17332D"
       >
         <Showcase />
       </section>
       <section
-        className="min-h-[calc(100dvh)]"
+        className="min-h-[calc(100dvh)] w-screen relative"
         data-bgcolor="#b7c0be"
         data-textcolor="#17332D"
       >
