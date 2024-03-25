@@ -2,32 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply antialiased;
+  }
+  h1 {
+    @apply font-sans text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter leading-tight md:leading-tight lg:leading-tight;
+  }
+  h2 {
+    @apply font-sans text-3xl md:text-5xl font-medium tracking-tighter;
+  }
+  h3 {
+    @apply font-sans text-2xl md:text-4xl font-medium tracking-tighter;
+  }
+  h4 {
+    @apply font-sans text-xl md:text-3xl font-medium tracking-tighter;
+  }
+  h5 {
+    @apply font-sans text-lg md:text-2xl font-medium tracking-tighter;
+  }
+  h6 {
+    @apply font-sans text-lg md:text-xl font-medium tracking-tighter;
+  }
+  p,
+  Link,
+  a {
+    @apply font-sans text-lg md:text-xl font-normal tracking-tighter;
+  }
+  li {
+    @apply font-sans font-medium text-base tracking-tighter;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  button {
+    @apply font-sans h-auto text-lg font-medium tracking-tighter px-4 py-3 rounded-full inline-flex items-center justify-center;
+  }
+  input,
+  textarea {
+    @apply font-sans w-full h-auto text-sm tracking-wide px-2 py-3 rounded-lg inline-flex items-center justify-center border-gray-400 bg-white;
+  }
+  input:focus {
+    @apply outline-none border-gray-400;
+  }
+  .ko-transition {
+    @apply transition duration-300;
+  }
+  .ko-border {
+    @apply border border-transparent [background:linear-gradient(theme(colors.white),theme(colors.white))_padding-box,linear-gradient(120deg,theme(colors.zinc.300),theme(colors.white),theme(colors.zinc.300))_border-box];
+  }
+  .ko-rounded-li {
+    @apply h-auto px-3 py-2 rounded-full inline-flex items-center justify-center border border-ko-primary-3;
+  }
+  @keyframes loop {
+    to {
+      offset-distance: 100%;
+    }
+  }
+  .ko-container {
+    @apply container px-6 py-4 md:py-8;
+  }
+  .ko-container-services {
+    @apply container px-6 py-8 max-w-5xl mx-auto grid content-between md:content-center h-svh md:grid-cols-2 gap-4;
+  }
+  .ko-bg-header {
+    @apply bg-[url('/images/lights.svg')] bg-no-repeat;
+  }
+  .ko-bg-footer {
+    @apply bg-[url('/images/stars.svg')];
+  }
+  .ko-button {
+    @apply bg-ko-primary-normal text-ko-midnight inline-flex gap-1;
+  }
+  .ko-paragraph-span {
+    @apply items-baseline font-medium;
+  }
+  .ko-paragraph-span-icon {
+    @apply self-center size-6 inline mr-1;
   }
 }
